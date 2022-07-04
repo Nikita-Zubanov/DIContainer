@@ -50,7 +50,7 @@ namespace DIContainer.Tests
         public void CachedBooksIsEmpty()
         {
             var container = new Container();
-            // Используется хранилище с жизненным циклом "singleton".
+            // Используется хранилище с жизненным циклом "transient".
             container.Register<IBookRepository, BookRepository>(Lifestyle.Transient);
             container.Register<IDataProvider>(
                 () => new DbProvider("server=none;db=none;"),
